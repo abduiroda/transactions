@@ -38,3 +38,12 @@ positive_transactions = np.where(transactions > 0, transactions, 0)
 total_positive_per_client = np.sum(positive_transactions, axis=0)
 max_deposit_client = np.argmax(total_positive_per_client)
 print(f"Клиент с наибольшими депозитами: Клиент {max_deposit_client + 1}")
+
+#График динамики суммарных транзакций по дням
+plt.plot(range(1, 6), daily_tran_sum, marker='o', linestyle='-', color='blue', label='Суммарные транзакции')
+plt.title('Динамика суммарных транзакций по дням')
+plt.xlabel('День')
+plt.ylabel('Сумма транзакций')
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.legend()
+plt.show()
